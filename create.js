@@ -1,3 +1,12 @@
+var mongoose=require('mongoose');
+var schema=require('./schema');
+
+mongoose.connect('mongodb://localhost:27017/tarea5',{
+    useNewUrlParser: true
+});
+
+var User=mongoose.model('User',schema,'users');
+
 var user1=new User({
     name: 'Henry Rico',
     email: 'hericoes@ittepic.edu.mx'
@@ -29,5 +38,5 @@ User.create({name:'Lizeth Uribe', email: 'liguuribena@ittepic.edu.mx'},function(
         console.log(error);
         process.exit(1);
     }
-    console.log("Saved "+name);
+    console.log("Saved User3");
 });
